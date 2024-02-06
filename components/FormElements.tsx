@@ -2,13 +2,13 @@ import { TextFieldFormElement } from './fields/TextField'
 
 export type ElementsType = 'TextField'
 
-export type FormElementType = {
-	type: ElementType
+export type FormElement = {
+	type: ElementsType;
 
 	construct: (id: string) => FormElementInstance
 
 	designBtnElement: {
-		icon: React.ElementType
+		icon: React.ElementsType
 		label: string
 	}
 
@@ -16,15 +16,16 @@ export type FormElementType = {
 	formComponent: React.FC
 	propertiesComponent: React.FC
 }
-
+// Type of FormElementInstance
 export type FormElementInstance = {
 	id: string
-	type: ElementType
+	type: ElementsType
 	extraAttributes?: Record<string, any>
 }
 
+// Type of FormElements
 type FormElementsType = {
-	[key in ElementsType]: FormElementType
+	[key in ElementsType]: FormElement
 }
 
 export const FormElements: FormElementsType = {

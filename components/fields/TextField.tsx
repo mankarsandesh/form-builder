@@ -1,11 +1,11 @@
 'use client'
 
 import { MdTextFields } from 'react-icons/md'
-import { ElementsType, FormElements } from './Formelements'
+import { ElementsType, FormElement } from './Formelements'
 
 const type: ElementsType = 'TextField'
 
-export const TextFieldFormElement: FormElements = {
+export const TextFieldFormElement: FormElement = {
 	type,
 	constrct: (id: string) => ({
 		id,

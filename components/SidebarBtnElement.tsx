@@ -1,10 +1,10 @@
 import React from 'react'
-import { FormElements } from './Formelements'
+import { FormElement } from './Formelements'
 import { useDraggable } from '@dnd-kit/core'
 import { Button } from './ui/button'
 import { cn } from '@/lib/utils'
 
-function SidebarBtnElement({ formElement }: { formElement: FormElements }) {
+function SidebarBtnElement({ formElement }: { FormElement: FormElement }) {
 	const { icon: Icon, label } = formElement.designBtnElement
 	const draggable = useDraggable({
 		id: `designer-btn-${formElement.type}`,
