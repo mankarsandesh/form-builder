@@ -15,14 +15,14 @@ CREATE TABLE "Form" (
 );
 
 -- CreateTable
-CREATE TABLE "FormSubmission" (
+CREATE TABLE "FormSubmissions" (
     "id" SERIAL NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "formId" INTEGER NOT NULL,
     "content" TEXT NOT NULL,
 
-    CONSTRAINT "FormSubmission_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "FormSubmissions_pkey" PRIMARY KEY ("id")
 );
 
 -- AddForeignKey
-ALTER TABLE "FormSubmission" ADD CONSTRAINT "FormSubmission_formId_fkey" FOREIGN KEY ("formId") REFERENCES "Form"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "FormSubmissions" ADD CONSTRAINT "FormSubmissions_formId_fkey" FOREIGN KEY ("formId") REFERENCES "Form"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
