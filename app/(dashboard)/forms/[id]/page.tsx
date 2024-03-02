@@ -106,7 +106,6 @@ async function SubmissionsTable({ id }: { id: number }) {
   if (!form) {
     throw new Error("form not found");
   }
-
   const formElements = JSON.parse(form.content) as FormElementInstance[];
   const columns: {
     id: string;

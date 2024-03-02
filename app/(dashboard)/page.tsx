@@ -14,7 +14,7 @@ import { formatDistance } from "date-fns";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaTrash } from "react-icons/fa";
 import StatsCard from "@/components/StatsCard";
 
 export default function Home() {
@@ -150,7 +150,7 @@ function FormCard({ form }: { form: Form }) {
           {form.published && <Badge>Published</Badge>}
           {!form.published && <Badge variant={"destructive"}>Draft</Badge>}
         </CardTitle>
-        <CardDescription className="flex items-center justify-between text-muted-foreground text-sm">
+        <CardDescription className="flex items-center justify-between text-muted-foreground text-xs">
           {formatDistance(form.createdAt, new Date(), {
             addSuffix: true,
           })}
@@ -167,21 +167,26 @@ function FormCard({ form }: { form: Form }) {
       <CardContent className="h-[20px] truncate text-sm text-muted-foreground">
         {form.description || "No description"}
       </CardContent>
-      <CardFooter>
+      <CardFooter className="space-x-2">
         {form.published && (
-          <Button asChild className="w-full mt-2 text-md gap-4">
+          <Button asChild className="w-full mt-2 text-sm gap-4">
             <Link href={`/forms/${form.id}`}>
               View submissions <BiRightArrowAlt />
             </Link>
           </Button>
         )}
         {!form.published && (
-          <Button asChild variant={"secondary"} className="w-full mt-2 text-md gap-4">
+          <Button asChild variant={"secondary"} className="w-full mt-2 text-sm gap-4">
             <Link href={`/builder/${form.id}`}>
               Edit form <FaEdit />
             </Link>
           </Button>
         )}
+        <Button asChild variant={"secondary"} className="w-full mt-2 text-sm gap-4 text-red-500">
+          <Link href={`/builder/${form.id}`}>
+            Delete <FaTrash />
+          </Link>
+        </Button>
       </CardFooter>
     </Card>
   );

@@ -165,7 +165,7 @@ function PropertiesComponent({ elementInstance }: { elementInstance: FormElement
           name="label"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Label</FormLabel>
+              <FormLabel>Label Name</FormLabel>
               <FormControl>
                 <Input
                   {...field}
