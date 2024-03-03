@@ -8,6 +8,7 @@ import { HiCursorClick } from "react-icons/hi";
 import { TbArrowBounce } from "react-icons/tb";
 import { Separator } from "@/components/ui/separator";
 import CreateFormBtn from "@/components/CreateFormBtn";
+import ImportFormBtn from "@/components/ImportFormBtn";
 import { Form } from "@prisma/client";
 import { Badge } from "@/components/ui/badge";
 import { formatDistance } from "date-fns";
@@ -28,6 +29,7 @@ export default function Home() {
       <Separator className="my-6" />
       <div className="grid gric-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <CreateFormBtn />
+        <ImportFormBtn />
         <Suspense
           fallback={[1, 2, 3, 4].map((el) => (
             <FormCardSkeleton key={el} />
